@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 #     defaults:
 #       run:
-#         working-directory: 'NietDiscord/ui'
+#         working-directory: 'S6-Personal-UI/ui/'
     strategy:
       matrix:
         node-version: [14.x]
