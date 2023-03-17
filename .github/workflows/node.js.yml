@@ -13,9 +13,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: 'S6-Personal-UI/ui/'
+#     defaults:
+#       run:
+#         working-directory: 'S6-Personal-UI/ui/'
     strategy:
       matrix:
         node-version: [14.x]
@@ -30,7 +30,7 @@ jobs:
     - name : Cache
       uses: actions/cache@v2
       with:
-        path: "frontend/node_modules"
+        path: "ui/node_modules"
         key: node-modules-${{ hashFiles('package.json') }}
     - run: npm ci
 #       working-directory: ./S6-Personal-UI/ui
