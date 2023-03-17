@@ -30,7 +30,7 @@ jobs:
     - name : Cache
       uses: actions/cache@v2
       with:
-        path: "ui/node_modules"
+        path: "./node_modules"
         key: node-modules-${{ hashFiles('package.json') }}
     - run: npm ci
 #       working-directory: ./S6-Personal-UI/ui
