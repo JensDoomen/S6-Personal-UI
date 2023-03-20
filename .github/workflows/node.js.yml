@@ -33,9 +33,9 @@ jobs:
         path: "./ui"
         key: node-modules-${{ hashFiles('package.json') }}
     - run: npm ci
-#       working-directory: ./ui
+      working-directory: ./ui
     - run: npm run build --if-present
-#       working-directory: ./ui
+      working-directory: ./ui
 
 
 
