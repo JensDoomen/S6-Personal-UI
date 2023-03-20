@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 #     defaults:
 #       run:
-#         working-directory: 'S6-Personal-UI/ui/'
+#         working-directory: 'S6-Personal-UI'
     strategy:
       matrix:
         node-version: [14.x]
@@ -33,9 +33,9 @@ jobs:
         path: "./ui"
         key: node-modules-${{ hashFiles('package.json') }}
     - run: npm ci
-      working-directory: ./ui
+      # working-directory: ./ui
     - run: npm run build --if-present
-      working-directory: ./ui
+     # working-directory: ./ui
 
 
 
@@ -91,6 +91,8 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
+        with: 
+          projectBaseDir: ./S6-Personal-UI
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
