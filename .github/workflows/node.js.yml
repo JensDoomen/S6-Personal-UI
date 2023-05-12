@@ -64,7 +64,7 @@ jobs:
         with:
           file: Dockerfile
           push: true
-          tags: jensdoomen/S6-Personal-UI:latest
+          tags: jensdoomen/s6_ui:latest
           
           
 #   sonarcloud:
